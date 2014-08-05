@@ -26,7 +26,10 @@ Generate a plot of an aspect of individual household electric power consumption 
 
 **Synopsis**
 
-    source("plot<i>n</i>.R")
+    source("plot1.R")
+    source("plot2.R")
+    source("plot3.R")
+    source("plot4.R")
 
 **Arguments**
 
