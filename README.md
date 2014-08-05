@@ -1,4 +1,75 @@
-## Introduction
+# README for the submitted plots and scripts
+
+This README file has been updated and extended with new content to accompany the submission of the plots and the scripts that make them for the Coursera Exploring Data Project 1. The original material has been retained in the appendix.
+
+## The plots
+
+The plots which have been generated for the project are to be found in the top level of the directory with the names plot<i>n</i>.png as specified.
+
+They have been designed to [_visually_ match](https://class.coursera.org/exdata-005/forum/thread?thread_id=3#post-10) the reference plots as given in the appendix, i.e. to show the same data in the same way with the same annotations, subject to the following requirements and considerations:
+
+* 480x480 pixels as specified (compared to 504x504 for the reference plots)
+* White background rather than transparent, for correct visual matching with web browser 
+* very small variations in rendering fonts and graphics between platforms
+
+## The scripts
+
+The scripts that generate the plots for the project are also to be found in the top level of the directory with the names plot<i>n</i>.R as specified. 
+
+
+### Usage of the plot<i>n</i>.R scripts
+
+
+**Description**
+
+Generate a plot of an aspect of individual household electric power consumption for the dates 2007-02-01 and 2007-02-02
+
+**Synopsis**
+
+    source("plot<i>n</i>.R")
+
+**Arguments**
+
+None.
+
+**Input**
+
+The input to the script is the data set of Electric power consumption at
+https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip,
+which should be downloaded from the internet, unzipped and placed in the current directory as the file "household_power_consumption.txt".
+
+If this file cannot be found, the script attempts to obtain the data from the internet; this may or may not be successful, depending on the user's platform and environment.
+ 
+**Output**
+
+Each plot<i>n</i>.R script generates the corresponding plot<i>n</i>.png file in the current directory
+
+The function has no useful return value.
+
+**Environment**
+
+Run the script from an R console (verified for R V3.1.0 tunning on Windows 7 64 bits). 
+
+### Implementation notes on the scripts
+
+The structure of each of the scripts is similar and each goes through the same three main steps:
+
+1. Read in the raw data, downloading it first if necessary, in the function read_data()
+
+2. Form the date subset of interest in get_working_data()
+
+3. Generate the required plot using the png device and base plotting package, in the top-level function.
+
+Note that in step 1, only a small fraction of the file is actually read in order to conserve resources, because the file is very large, and the data of interest is towards the front. 
+
+Steps 1 and 2 are the same for each script. Had it not been required to make each script file stand-alone and self-contained, the functions read_data() and get_working_data() might otherwise have been better structured as shared code between the four plots. Likewise, as two subplots in plot 4 are similar to plots 2 and 3, they could also have been implemented as shared code.
+
+# Appendix -- original project description
+
+This section and the following ones retain the original material in this README prior to implementation of the scripts for the project.
+
+## Introduction 
+
 
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
